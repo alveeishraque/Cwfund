@@ -96,7 +96,7 @@ const InvestmentProjectList = () => {
             toast.error('Failed to process investment');
         }
     };
-    alvee
+    // alvee
     const handleViewComments = (projectId) => {
         navigate(`/viewcomments/${projectId}`);
     };
