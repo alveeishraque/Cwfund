@@ -46,57 +46,57 @@ const InvestmentProjectList = () => {
         }
     };
     // ryhan
-    // const handleAmountChange = (projectId, amount) => {
-    //     setInvestmentAmounts({
-    //         ...investmentAmounts,
-    //         [projectId]: amount
-    //     });
-    // };
-    // // ryhan
-    // const handleInvest = async (projectId) => {
-    //     try {
-    //         const amount = Number(investmentAmounts[projectId]);
-    //         if (!amount || amount <= 0) {
-    //             toast.error('Please enter a valid investment amount');
-    //             return;
-    //         }
+    const handleAmountChange = (projectId, amount) => {
+        setInvestmentAmounts({
+            ...investmentAmounts,
+            [projectId]: amount
+        });
+    };
+    // ryhan
+    const handleInvest = async (projectId) => {
+        try {
+            const amount = Number(investmentAmounts[projectId]);
+            if (!amount || amount <= 0) {
+                toast.error('Please enter a valid investment amount');
+                return;
+            }
 
-    //         if (amount > walletBalance) {
-    //             toast.error('Insufficient wallet balance');
-    //             return;
-    //         }
+            if (amount > walletBalance) {
+                toast.error('Insufficient wallet balance');
+                return;
+            }
 
-    //         const response = await fetch('http://localhost:3000/api/investments', {
-    //             method: 'POST',
-    //             headers: {
-    //                 'Content-Type': 'application/json',
-    //             },
-    //             credentials: 'include',
-    //             body: JSON.stringify({
-    //                 projectId,
-    //                 amount
-    //             })
-    //         });
+            const response = await fetch('http://localhost:3000/api/investments', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                credentials: 'include',
+                body: JSON.stringify({
+                    projectId,
+                    amount
+                })
+            });
 
-    //         const data = await response.json();
+            const data = await response.json();
 
-    //         if (response.ok) {
-    //             toast.success('Investment successful!');
-    //             setInvestmentAmounts({
-    //                 ...investmentAmounts,
-    //                 [projectId]: ''
-    //             });
-    //             setWalletBalance(data.updatedBalance); // Update wallet balance
-    //             fetchApprovedProjects(); // Refresh the project list
-    //         } else {
-    //             toast.error(data.message || 'Investment failed');
-    //         }
-    //     } catch (error) {
-    //         console.error('Error making investment:', error);
-    //         toast.error('Failed to process investment');
-    //     }
-    // };
-    // alvee
+            if (response.ok) {
+                toast.success('Investment successful!');
+                setInvestmentAmounts({
+                    ...investmentAmounts,
+                    [projectId]: ''
+                });
+                setWalletBalance(data.updatedBalance); // Update wallet balance
+                fetchApprovedProjects(); // Refresh the project list
+            } else {
+                toast.error(data.message || 'Investment failed');
+            }
+        } catch (error) {
+            console.error('Error making investment:', error);
+            toast.error('Failed to process investment');
+        }
+    };
+    alvee
     const handleViewComments = (projectId) => {
         navigate(`/viewcomments/${projectId}`);
     };
@@ -128,7 +128,7 @@ const InvestmentProjectList = () => {
 
                             {/* ryhan start */}
                             
-                            {/* <div className="mt-4">
+                            <div className="mt-4">
                                 <div className="flex justify-between mb-2 text-sm">
                                     <span>Progress:</span>
                                     <span>{((project.currentInvestment / project.fundingGoal) * 100).toFixed(1)}%</span>
@@ -173,7 +173,7 @@ const InvestmentProjectList = () => {
                                     disabled={!investmentAmounts[project._id]}
                                 >
                                     Invest Now
-                                </button> */}
+                                </button>
                                 {/* ryhan end */}
 
                                 {/* alvee */}
