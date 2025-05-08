@@ -42,7 +42,7 @@ const Register = () => {
         //     });
 
 
-            fetch('http://localhost:3000/signup', {
+            fetch('https://venture-xbackend.vercel.app/signup', {
                 method: 'POST',
                 headers: {
                     'content-type': 'application/json'

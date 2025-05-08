@@ -24,7 +24,7 @@ const Addproject = () => {
     const projectInfo = { title, description, fundingGoal, deadline,img };
     console.log('Submitting:', projectInfo);
 
-    fetch('http://localhost:3000/create-project', {
+    fetch('https://venture-xbackend.vercel.app/create-project', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

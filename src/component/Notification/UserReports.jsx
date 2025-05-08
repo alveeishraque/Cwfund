@@ -14,7 +14,7 @@ const UserReports = () => {
   const fetchUserReports = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3000/api/reports/my-reports', {
+      const response = await fetch('https://venture-xbackend.vercel.app/api/reports/my-reports', {
         method: 'GET',
         headers: {
           'Content-Type': 'application/json',

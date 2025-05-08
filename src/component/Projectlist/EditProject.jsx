@@ -11,7 +11,7 @@ const EditProject = () => {
     const [modalAction, setModalAction] = useState('');
 
     useEffect(() => {
-        fetch(`http://localhost:3000/create-project/${id}`, {
+        fetch(`https://venture-xbackend.vercel.app/create-project/${id}`, {
             credentials: 'include',
         })
             .then(res => res.json())
@@ -28,7 +28,7 @@ const EditProject = () => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await fetch(`http://localhost:3000/projects/${id}`, {
+            const response = await fetch(`https://venture-xbackend.vercel.app/projects/${id}`, {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json',
@@ -53,7 +53,7 @@ const EditProject = () => {
 
     const handleDelete = async () => {
         try {
-            const response = await fetch(`http://localhost:3000/projects/${id}`, {
+            const response = await fetch(`https://venture-xbackend.vercel.app/projects/${id}`, {
                 method: 'DELETE',
                 credentials: 'include',
             });

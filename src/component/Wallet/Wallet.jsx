@@ -21,11 +21,11 @@ const Wallet = () => {
       setLoading(true);
       
       // Fetch wallet balance
-      const balanceRes = await axios.get('http://localhost:3000/api/wallet/balance', { withCredentials: true });
+      const balanceRes = await axios.get('https://venture-xbackend.vercel.app/api/wallet/balance', { withCredentials: true });
       setBalance(balanceRes.data.balance);
       
       // Fetch transaction history
-      const transactionsRes = await axios.get('http://localhost:3000/api/wallet/transactions', { withCredentials: true });
+      const transactionsRes = await axios.get('https://venture-xbackend.vercel.app/api/wallet/transactions', { withCredentials: true });
       setTransactions(transactionsRes.data);
       
       setLoading(false);
@@ -52,7 +52,7 @@ const Wallet = () => {
         return;
       }
       
-      const endpoint = `http://localhost:3000/api/wallet/${type}`;
+      const endpoint = `https://venture-xbackend.vercel.app/api/wallet/${type}`;
       const response = await axios.post(
         endpoint, 
         { amount: parsedAmount },

@@ -11,7 +11,7 @@ const Nav = () => {
         const fetchUserInfo = async () => {
             if (user?.id) {
                 try {
-                    const res = await fetch(`http://localhost:3000/user/${user.id}`, {
+                    const res = await fetch(`https://venture-xbackend.vercel.app/user/${user.id}`, {
                         credentials: 'include'
                     });
                     const data = await res.json();

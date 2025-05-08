@@ -19,7 +19,7 @@ const ReportsManagement = () => {
   const fetchReports = async () => {
     try {
       setLoading(true);
-      const response = await fetch('http://localhost:3000/api/reports/all', {
+      const response = await fetch('https://venture-xbackend.vercel.app/api/reports/all', {
         credentials: 'include'
       });
 
@@ -45,7 +45,7 @@ const ReportsManagement = () => {
 
     setProcessingReport(true);
     try {
-      const response = await fetch(`http://localhost:3000/api/reports/${reportId}/process`, {
+      const response = await fetch(`https://venture-xbackend.vercel.app/api/reports/${reportId}/process`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -81,7 +81,7 @@ const ReportsManagement = () => {
 
   const handleRemovePenalties = async (userId) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/reports/penalties/remove/${userId}`, {
+      const response = await fetch(`https://venture-xbackend.vercel.app/api/reports/penalties/remove/${userId}`, {
         method: 'PUT',
         credentials: 'include'
       });

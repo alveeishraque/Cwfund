@@ -65,7 +65,7 @@ const Authprovider = ({ children }) => {
     useEffect(() => {
         const checkSession = async () => {
             try {
-                const res = await fetch('http://localhost:3000/check-session', {
+                const res = await fetch('https://venture-xbackend.vercel.app/check-session', {
                     credentials: 'include'
                 });
                 const data = await res.json();
@@ -89,7 +89,7 @@ const Authprovider = ({ children }) => {
     // Logout function — calls backend to destroy session
     const logout = async () => {
         try {
-            await fetch('http://localhost:3000/logout', {
+            await fetch('https://venture-xbackend.vercel.app/logout', {
                 method: 'GET',
                 credentials: 'include'
             });

@@ -14,7 +14,7 @@ const View = () => {
         const fetchEntrepreneur = async () => {
             if (project && project.createdBy) {
                 try {
-                    const response = await fetch(`http://localhost:3000/api/users/${project.createdBy}`, {
+                    const response = await fetch(`https://venture-xbackend.vercel.app/api/users/${project.createdBy}`, {
                         credentials: 'include'
                     });
                     if (response.ok) {

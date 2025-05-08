@@ -26,7 +26,7 @@ console.log('Project ID:', userInfo); // Debugging line to check projectId
 
     const fetchComments = async (projectId) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/comments/${projectId}`);
+            const response = await fetch(`https://venture-xbackend.vercel.app/api/comments/${projectId}`);
             const data = await response.json();
             
             if (Array.isArray(data)) {
@@ -53,7 +53,7 @@ console.log('Project ID:', userInfo); // Debugging line to check projectId
         }
     
         try {
-            const response = await fetch('http://localhost:3000/api/comments', {
+            const response = await fetch('https://venture-xbackend.vercel.app/api/comments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',

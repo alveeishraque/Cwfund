@@ -28,7 +28,7 @@ import EditProject from './component/Projectlist/EditProject.jsx';
 import Notification from './component/Notification/Notification.jsx';
 import ViewComments from './component/Comment/ViewComments.jsx';
 import Wallet from './component/Wallet/Wallet.jsx';
-
+// import 'dotenv/config'
 
 const router = createBrowserRouter([
   {
@@ -50,16 +50,16 @@ const router = createBrowserRouter([
       { path: "/addproject", element: <Addproject /> },
       { path: "/project", element: <Project /> },
       { path: "/view/:id", element: <View />,
-        loader: ({params}) => fetch(`http://localhost:3000/create-project/${params.id}`)
+        loader: ({params}) => fetch(`https://venture-xbackend.vercel.app/create-project/${params.id}`)
       },
       // view comments
       { 
         path: "/viewcomments/:id", 
         element: <ViewComments />, 
-        loader: ({ params }) => fetch(`http://localhost:3000/api/comments/${params.id}`)
+        loader: ({ params }) => fetch(`https://venture-xbackend.vercel.app/api/comments/${params.id}`)
       },
       { path: "/entroprojectview/:id", element: <ViewEntroProject />,
-        loader: ({params}) => fetch(`http://localhost:3000/edit-project/${params.id}`)
+        loader: ({params}) => fetch(`https://venture-xbackend.vercel.app/edit-project/${params.id}`)
       },
       { path: "/edit-project/:id", element: <EditProject /> },
       { path: "/notification", element: <Notification></Notification> },

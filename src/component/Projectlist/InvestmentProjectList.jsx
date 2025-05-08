@@ -24,7 +24,7 @@ const InvestmentProjectList = () => {
     // alvee
     const fetchApprovedProjects = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/projects/approved', {
+            const response = await fetch('https://venture-xbackend.vercel.app/api/projects/approved', {
                 credentials: 'include'
             });
             const data = await response.json();
@@ -36,7 +36,7 @@ const InvestmentProjectList = () => {
     // taj
     const fetchWalletBalance = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/wallet/balance', {
+            const response = await fetch('https://venture-xbackend.vercel.app/api/wallet/balance', {
                 credentials: 'include'
             });
             const data = await response.json();
@@ -66,7 +66,7 @@ const InvestmentProjectList = () => {
                 return;
             }
 
-            const response = await fetch('http://localhost:3000/api/investments', {
+            const response = await fetch('https://venture-xbackend.vercel.app/api/investments', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -105,7 +105,7 @@ const InvestmentProjectList = () => {
         // alvee
         <div className="p-6">
             <div className="mb-6 text-lg font-semibold text-right text-primary">
-                Wallet Balance: ${walletBalance.toLocaleString()}
+                {/* Wallet Balance: ${walletBalance.toLocaleString()} */}
             </div>
 
             <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">

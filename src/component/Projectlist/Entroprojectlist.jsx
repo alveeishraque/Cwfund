@@ -5,7 +5,7 @@ const Entroprojectlist = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/api/entrepreneur-projects', {
+        fetch('https://venture-xbackend.vercel.app/api/entrepreneur-projects', {
             credentials: 'include',
         })
             .then(res => res.json())

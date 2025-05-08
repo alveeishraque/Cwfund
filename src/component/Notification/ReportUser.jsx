@@ -27,7 +27,7 @@ const ReportUser = ({ userId, projectId, onClose }) => {
         .map(url => url.trim())
         .filter(url => url.length > 0);
 
-      const response = await fetch('http://localhost:3000/api/reports/submit', {
+      const response = await fetch('https://venture-xbackend.vercel.app/api/reports/submit', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

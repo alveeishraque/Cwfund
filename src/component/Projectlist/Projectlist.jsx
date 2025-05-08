@@ -5,7 +5,7 @@ const Projectlist = () => {
     const [projects, setProjects] = useState([]);
 
     useEffect(() => {
-        fetch('http://localhost:3000/create-project')
+        fetch(`https://venture-xbackend.vercel.app/create-project`)
             .then(res => res.json())
             .then(data => {
                 console.log('Projects:', data);
@@ -20,7 +20,7 @@ const Projectlist = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 p-4">  
        {/* <h1>total project:{projects.length}</h1> */}
        {
-        projects.map((project, index)=>
+        projects?.map((project, index)=>
         <Project
         key={index}
         project={project}>

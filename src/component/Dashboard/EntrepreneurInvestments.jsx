@@ -24,7 +24,7 @@ const EntrepreneurInvestments = () => {
 
     const fetchProjects = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/entrepreneur-projects', {
+            const response = await fetch('https://venture-xbackend.vercel.app/api/entrepreneur-projects', {
                 credentials: 'include'
             });
 
@@ -46,8 +46,8 @@ const EntrepreneurInvestments = () => {
             
             // Fetch investments for either all projects or a specific project
             const url = selectedProject === 'all' 
-                ? 'http://localhost:3000/api/investments/entrepreneur'
-                : `http://localhost:3000/api/investments/project/${selectedProject}`;
+                ? 'https://venture-xbackend.vercel.app/api/investments/entrepreneur'
+                : `https://venture-xbackend.vercel.app/api/investments/project/${selectedProject}`;
 
             const response = await fetch(url, {
                 credentials: 'include'

@@ -19,7 +19,7 @@ const EntrepreneurProfile = () => {
             return;
         }
 
-        fetch(`http://localhost:3000/entrepreneur-profile/${userInfo._id}`)
+        fetch(`https://venture-xbackend.vercel.app/entrepreneur-profile/${userInfo._id}`)
             .then((response) => response.json())
             .then((data) => {
                 setProfile(data);

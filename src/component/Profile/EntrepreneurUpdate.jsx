@@ -22,7 +22,7 @@ const EntrepreneurUpdate = () => {
 
     useEffect(() => {
         if (userInfo?._id) {
-            fetch(`http://localhost:3000/entrepreneur-profile/${userInfo._id}`)
+            fetch(`https://venture-xbackend.vercel.app/entrepreneur-profile/${userInfo._id}`)
                 .then(response => response.json())
                 .then(data => {
                     setProfileData({
@@ -53,7 +53,7 @@ const EntrepreneurUpdate = () => {
     const handleSubmit = (e) => {
         e.preventDefault();
         
-        fetch(`http://localhost:3000/entrepreneur-profile/${userInfo._id}`, {
+        fetch(`https://venture-xbackend.vercel.app/entrepreneur-profile/${userInfo._id}`, {
             method: 'PUT',
             headers: {
                 'Content-Type': 'application/json',

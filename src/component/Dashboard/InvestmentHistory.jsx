@@ -21,7 +21,7 @@ const InvestmentHistory = () => {
     const fetchInvestments = async () => {
         try {
             const response = await fetch(
-                `http://localhost:3000/api/investments/investor/${userInfo._id}`,
+                `https://venture-xbackend.vercel.app/api/investments/investor/${userInfo._id}`,
                 { credentials: 'include' }
             );
             const data = await response.json();
@@ -44,7 +44,7 @@ const InvestmentHistory = () => {
             
             // Fetch project details one by one to get creator information
             for (const projectId of uniqueIds) {
-                const response = await fetch(`http://localhost:3000/create-project/${projectId}`, {
+                const response = await fetch(`https://venture-xbackend.vercel.app/create-project/${projectId}`, {
                     credentials: 'include'
                 });
                 
@@ -53,7 +53,7 @@ const InvestmentHistory = () => {
                     
                     if (project.createdBy) {
                         // Get creator details
-                        const userResponse = await fetch(`http://localhost:3000/user/${project.createdBy}`, {
+                        const userResponse = await fetch(`https://venture-xbackend.vercel.app/user/${project.createdBy}`, {
                             credentials: 'include'
                         });
                         

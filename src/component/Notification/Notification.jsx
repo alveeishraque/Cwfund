@@ -8,7 +8,7 @@ const Notification = () => {
     // Fetch notifications for the entrepreneur
     const fetchNotifications = async () => {
         try {
-            const response = await fetch('http://localhost:3000/api/notifications', {
+            const response = await fetch('https://venture-xbackend.vercel.app/api/notifications', {
                 method: 'GET',
                 credentials: 'include' // Include credentials (cookies/session) in the request
             });
@@ -32,7 +32,7 @@ const Notification = () => {
 
     const markAsRead = async (notificationId) => {
         try {
-            const response = await fetch(`http://localhost:3000/api/notifications/${notificationId}`, {
+            const response = await fetch(`https://venture-xbackend.vercel.app/api/notifications/${notificationId}`, {
                 method: 'PATCH',
                 credentials: 'include' // Include credentials (cookies/session) in the request
             });

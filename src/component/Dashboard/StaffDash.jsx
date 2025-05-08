@@ -13,7 +13,7 @@ const StaffDash = () => {
 
     const fetchPendingProjects = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/api/staff/pending-projects', {
+            const response = await axios.get('https://venture-xbackend.vercel.app/api/staff/pending-projects', {
                 withCredentials: true
             });
             setPendingProjects(response.data);
@@ -29,7 +29,7 @@ const StaffDash = () => {
 
     const fetchPendingProfiles = async () => {
         try {
-            const response = await axios.get('http://localhost:3000/profile-updates/pending', {
+            const response = await axios.get('https://venture-xbackend.vercel.app/profile-updates/pending', {
                 withCredentials: true
             });
             setPendingProfiles(response.data);
@@ -56,7 +56,7 @@ const StaffDash = () => {
     const handleProjectApproval = async (projectId, action) => {
         try {
             await axios.patch(
-                `http://localhost:3000/api/staff/${action}-project/${projectId}`,
+                `https://venture-xbackend.vercel.app/api/staff/${action}-project/${projectId}`,
                 {},
                 { withCredentials: true }
             );
@@ -69,7 +69,7 @@ const StaffDash = () => {
     const handleProfileApproval = async (requestId, status, reviewNotes = '') => {
         try {
             await axios.patch(
-                `http://localhost:3000/profile-updates/${requestId}`,
+                `https://venture-xbackend.vercel.app/profile-updates/${requestId}`,
                 {
                     status,
                     reviewNotes
